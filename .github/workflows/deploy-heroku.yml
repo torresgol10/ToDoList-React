@@ -16,3 +16,5 @@ jobs:
           heroku_app_name: "ToDoList React" #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           appdir: "api" # <- This will point to the api folder in your project
+          procfile: "web: npm start"
+          region: "eu"
