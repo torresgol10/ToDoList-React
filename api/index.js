@@ -24,7 +24,7 @@ app.route('/api/:id')
         listById[id] = items;
 
         return res.json(listById[id]);
-    });
+    }); 
 
 app.listen({ port })
 console.log(`Started listening on port: ${port}`)
