@@ -26,5 +26,10 @@ app.route('/api/:id')
         return res.json(listById[id]);
     }); 
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+})
+
+
 app.listen({ port })
 console.log(`Started listening on port: ${port}`)
