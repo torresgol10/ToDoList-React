@@ -1,4 +1,4 @@
-import { useContext, useEffect, useCallback } from 'react';
+import { useContext } from 'react';
 import TasksContext from 'context/TasksContext';
 import { uid } from 'uid';
 import sendTasks from 'service/sendTasks';

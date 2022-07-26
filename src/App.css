@@ -1,7 +1,12 @@
 .App {
   text-align: center;
-  width: 50vw;
   margin: 0 auto;
+}
+
+@media ( min-width: 992px ) {
+  .App {
+    width: 50vw;
+  }
 }
 
 .App-header {
@@ -10,4 +15,3 @@
   justify-content: space-between;
   padding: 2rem
 }
-
