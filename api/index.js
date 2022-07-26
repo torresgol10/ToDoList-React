@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { listById } from './listById.js';
 
-const DEFAULT_PORT = 8080
+const DEFAULT_PORT = process.env.PORT || 5000
 
 const app = express();
 const port = DEFAULT_PORT;
