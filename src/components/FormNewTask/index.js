@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import Button from '@mui/material/Button';
 import { TextField } from "@mui/material";
 import FormControl from '@mui/material/FormControl';
+import { useTasks } from "hooks/useTasks";
 
-function FormNewTask({ onSubmitNewTask }) {
+function FormNewTask() {
     const [task, setTask] = useState("");
+
+    const { onSubmitNewTask } = useTasks();
 
     const onSubmit = (e) => {
         e.preventDefault();
