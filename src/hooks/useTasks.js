@@ -1,21 +1,17 @@
 import { useContext, useEffect, useCallback } from 'react';
 import TasksContext from 'context/TasksContext';
 import { uid } from 'uid';
+import sendTasks from 'service/sendTasks';
 
-export function useTasks({ IdTaks } = {}) {
-    const { tasks, setTasks } = useContext(TasksContext);
-
-    useEffect(() => {
-        console.log('useTasks');
-    }, [tasks]);
-
+export function useTasks() {
+    const { tasks, setTasks, id, setId } = useContext(TasksContext);
 
     const onClickDelete = (index) => {
         const newTasks = tasks.filter((task, i) => task.id !== index);
         setTasks(newTasks);
     };
-
-    const onClickCompleted = useCallback((index) => {
+    
+    const onClickCompleted = (index) => {
         const newTasks = tasks.map((task, i) => {
             if (task.id === index) {
                 task.completed = !task.completed;
@@ -24,12 +20,16 @@ export function useTasks({ IdTaks } = {}) {
         });
 
         setTasks(newTasks);
-    }, [setTasks, tasks]);
+        sendTasks({tasks: newTasks, id});
+    };
 
-    const onSubmitNewTask = useCallback(({ task }) => {
-        setTasks([...tasks, { id: uid(4), text: task, completed: false }]);
-    }, [setTasks, tasks]);
+    const onSubmitNewTask = ({ task }) => {
+        const newTasks = [...tasks, { id: uid(5), text: task, completed: false }];
+        setTasks(newTasks);
+        sendTasks({tasks: newTasks, id});
+    };
 
+    
 
-    return { tasks, setTasks, onClickDelete, onClickCompleted, onSubmitNewTask };
+    return { tasks, setTasks, onClickDelete, onClickCompleted, onSubmitNewTask, id, setId };
 }

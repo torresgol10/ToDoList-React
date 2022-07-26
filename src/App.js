@@ -9,14 +9,16 @@ import FormNewTask from 'components/FormNewTask';
 import { TasksContextProvider } from "context/TasksContext";
 
 import './App.css';
+import IdUser from "components/IdUser";
 
 function App() {
+
   return (
     <TasksContextProvider>
       <div className="App">
         <header className="App-header">
           <Typography variant="h6" component="span" mt={3} mb={3}>
-            Id de tu lista: #12345
+            Id de tu lista: <IdUser />
           </Typography>
 
           <FormLoadTask />
