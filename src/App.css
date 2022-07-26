@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem
+}
+
