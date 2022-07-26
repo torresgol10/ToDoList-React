@@ -9,6 +9,7 @@ export function useTasks() {
     const onClickDelete = (index) => {
         const newTasks = tasks.filter((task, i) => task.id !== index);
         setTasks(newTasks);
+        sendTasks({tasks: newTasks, id});
     };
     
     const onClickCompleted = (index) => {
