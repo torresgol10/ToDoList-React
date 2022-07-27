@@ -18,8 +18,9 @@ Vairables para el deploy
 
 **Client:** React, Material UI
 
-**Server:** Node, Express, Github Actions
+**Server:** Node, Express
 
+**Deploy:** Github Actions, Vercel, Heroku
 
 ## Demo
 
